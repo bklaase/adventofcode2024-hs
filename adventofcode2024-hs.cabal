@@ -8,16 +8,15 @@ maintainer:         ''
 
 common common
   default-language:   Haskell2010
-  build-depends:      base ^>=4.16.4.0,
-
+  build-depends:      base ^>=4.17.0.0,
+                      text >= 1.2.5.0,
 common solution
   build-depends:      adventofcode2024-hs,
   hs-source-dirs:     src
 
 library
   import:             common
-  build-depends:      text >= 1.2.5.0,
-                      time >= 1.11.1.1
+  build-depends:      time >= 1.11.1.1
   exposed-modules:    AoC.Lib
   hs-source-dirs:     ./lib
 
@@ -27,5 +26,4 @@ executable day00
 
 executable day1
   import:             common,solution
-  build-depends:      text >= 1.2.5.0,
   main-is:            Day1.hs
