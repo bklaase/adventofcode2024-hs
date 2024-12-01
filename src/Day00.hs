@@ -1,4 +1,4 @@
-module Day00 where
+module Main where
 
 import qualified AoC.Lib as L
 

@@ -1,6 +1,7 @@
-module Day1 where
+module Main where
 
 import qualified AoC.Lib as L
+import qualified Data.Text as T
 import Data.List ( sortOn )
 
 splitWhen :: (a-> Bool) -> [a] -> [[a]]
@@ -10,14 +11,11 @@ splitWhen p l@(x:xs)
   | otherwise = group : splitWhen p rest
       where (group, rest) = break p l
 
-parse :: String -> [[Integer]]
-parse = map (map read) . splitWhen (== "") . lines
+parse = splitWhen (== "   ") . lines
 
-part1 :: [[Integer]] -> Integer
-part1 = maximum . map sum
+part1 = id
 
-part2 :: [[Integer]] -> Integer
-part2 = sum . take 3 . sortOn negate . map sum
+part2 _ = "0"
 
 main :: IO ()
 main = do
