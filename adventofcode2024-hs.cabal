@@ -27,3 +27,7 @@ executable day00
 executable day1
   import:             common,solution
   main-is:            Day1.hs
+
+executable day2
+  import:             common,solution
+  main-is:            Day2.hs
